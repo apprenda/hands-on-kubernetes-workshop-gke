@@ -11,7 +11,7 @@ These steps are to be executed from your local machine!
 ## 1. Navigate to the repository directory on your machine.  
 
 ```
-$ cd /[LOCATION YOU CLONED THIS REPO]/GKE-hands-on-training
+$ cd /[LOCATION YOU CLONED THIS REPO]/hands-on-with-kubernetes-gke
 ```
 
 ## 2. Execute the Kubernetes deployment first
@@ -23,12 +23,12 @@ $ kubectl apply -f examples/rolling-deployment/deployment-v1.0.yaml
 ## 3. Display the pods
 
 ```
-$ kubectl get deployments k8s-workshop-site
+$ kubectl get deployments kdemo-dep
 ```
 Decribe the deployment
 
 ```
-$ kubectl describe deployments k8s-workshop-site
+$ kubectl describe deployments kdemo-dep
 ```
 See all the pods running on the cluster
 
@@ -39,7 +39,7 @@ $ kubectl get pods -o wide
 ## 4. Create a Services with an external endpoint that we can access
 
 ```
-$ kubectl expose deployment k8s-workshop-site --type=LoadBalancer --name=k8s-workshop-site-dev
+$ kubectl expose deployment kdemo-dep --type=LoadBalancer --name=k8s-workshop-site-dev
 ```
 Find the port and external IP
 
@@ -74,11 +74,11 @@ Now if we check the pods currently running we should see v1.1 of the application
 
 ```
 NAME                                 READY     STATUS              RESTARTS   AGE
-k8s-workshop-site-1412125313-c9clv   1/1       Running             0          7m
-k8s-workshop-site-1412125313-dlhsh   1/1       Terminating         0          7m
-k8s-workshop-site-1412125313-lxtx3   1/1       Running             0          7m
-k8s-workshop-site-1641828995-6z6xm   0/1       ContainerCreating   0          3s
-k8s-workshop-site-1641828995-jjgtc   0/1       ContainerCreating   0          3s
+kdemo-dep-1412125313-c9clv   1/1       Running             0          7m
+kdemo-dep-1412125313-dlhsh   1/1       Terminating         0          7m
+kdemo-dep-1412125313-lxtx3   1/1       Running             0          7m
+kdemo-dep-1641828995-6z6xm   0/1       ContainerCreating   0          3s
+kdemo-dep-1641828995-jjgtc   0/1       ContainerCreating   0          3s
 ```
 
 ## 6. Browse to version 1.1 of the website
