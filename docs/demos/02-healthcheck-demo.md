@@ -41,7 +41,7 @@ if you closed the Kuberentes Dashboard, follow the instructions to open Dashboar
 ## 5. Find the port and external IP
 
 ```
-$ kubectl get services k8s-workshop-site-dev
+$ kubectl get services probes-demo
 ```
 
 You should now be seeing:
