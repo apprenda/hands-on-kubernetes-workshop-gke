@@ -32,7 +32,7 @@ If you used Google Cloud before you may have more than one project. Make sure yo
 gcloud config set project [PROJECT_ID]
 ```
 
-Set default zone in Google Cloud for the workshop
+Set default zone in Google Cloud for the workshop. Your zone might be different than the command below based on your location.
 
 ```
 gcloud config set compute/zone us-east1-c
@@ -56,15 +56,15 @@ cd hands-on-with-kubernetes-gke
 
 ## 3. Provision a Cluster
 
-Run the following command to create a 3-node Kubernetes cluster in Google Container Engine (GKE). This may take a minute to respond and will run for several minutes while the cluster is provisioned.
+Run the following command to create a 3-node Kubernetes cluster in Google Container Engine (GKE). Make sure to update the zone based on what you set up for the project above. This may take a minute to respond and will run for several minutes while the cluster is provisioned.
 
 ```
 gcloud container clusters create "k8sworkshop" \
   --zone "us-east1-c" \
   --machine-type "n1-standard-1" \
-  --image-type "GCI" --disk-size "100" \
+  --image-type "GCI" --disk-size "50" \
   --scopes cloud-platform \
-  --num-nodes "3"
+  --num-nodes "1"
 ``` 
 
 When the command is finishing executing, you will see output like this
